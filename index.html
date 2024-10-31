@@ -26,6 +26,7 @@
           })();
         </script>
         <title>Jaydeepsinh Raj</title>
+        <link rel="icon" href="assets/img/title-logo-infinity.png" type="image/x-icon" />
     </head>
     <body>
         <!--==================== HEADER ====================-->
@@ -74,7 +75,6 @@
                     <div class="nav__toggle" id="nav-toggle">
                         <i class="uil uil-apps"></i>
                     </div>
-                    
                 </div>
             </nav>
         </header>
@@ -87,7 +87,7 @@
                 <div class="home__container container grid active-link">
                     <div class="home__content grid">
                         <div class="home__social">
-                            <a href="www.linkedin.com/in/jaydeepsinh-raj/" target="_blank" class="home__social-icon">
+                            <a href="https://www.linkedin.com/in/jaydeepsinh-raj/" target="_blank" class="home__social-icon">
                                 <i class="uil uil-linkedin-alt"></i>
                             </a>
                             <a href="https://github.com/jaydeepsinhraj/" target="_blank" class="home__social-icon">
@@ -120,7 +120,7 @@
                         </div>
 
                         <div class="home__data">
-                            <h1 class="home__title">Hi, I'm Jaydeepsinh Raj</h1>
+                            <h1 class="home__title">Hey, I'm Jaydeepsinh Raj</h1>
                             <h3 class="home__subtitle">Software QA Engineer</h3>
                             <p class="home__description">High level experience in Web Development & Software Quality Assurance!</p>
                             <a href="#contact" class="button button--flex"> 
@@ -342,7 +342,7 @@
 
                                 <div class="skills__data">
                                     <div class="skills__titles">
-                                        <h3 class="skills__name">Adobe Animate</h3>
+                                        <h3 class="skills__name">Adobe Animate and Illustrator</h3>
                                         <span class="skills__number">95%</span>
                                     </div>
                                     <div class="skills__bar">
@@ -378,7 +378,7 @@
 
                                 <div class="skills__data">
                                     <div class="skills__titles">
-                                        <h3 class="skills__name">Defects Management</h3>
+                                        <h3 class="skills__name">Defects and Test Case Management</h3>
                                         <span class="skills__number">94%</span>
                                     </div>
                                     <div class="skills__bar">
@@ -393,6 +393,15 @@
                                     </div>
                                     <div class="skills__bar">
                                         <span class="skills__percentage skills__at"></span>
+                                    </div>
+                                </div>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Testing Tools & Techniques</h3>
+                                        <span class="skills__number">96%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__ttt"></span>
                                     </div>
                                 </div>
                             </div>
@@ -638,7 +647,7 @@
                             <div class="portfolio__data">
                                 <h3 class="portfolio__title">My Portfolio Website</h3>
                                 <p class="portfolio__description">The website offers an intuitive user experience across devices, adapting seamlessly to various screen sizes. Built with modern technologies like HTML5, CSS3, and JavaScript, it features fluid layouts and interactive user experience.</p>
-                                <a href="#" class="button button--flex button--small portfolio__button">
+                                <a href="#" target="_blank" class="button button--flex button--small portfolio__button">
                                     Demo
                                     <i class="uil uil-arrow-right button__icon"></i>
                                 </a>
@@ -691,7 +700,7 @@
 
                             <div>
                                 <h3 class="contact__title">Call Me</h3>
-                                <span class="contact__subtitle">+1 (416) 879-8448</span>
+                                <span class="contact__subtitle">+1 (XXX) XXX-XX48</span>
                             </div>
                         </div>
 
@@ -700,7 +709,7 @@
 
                             <div>
                                 <h3 class="contact__title">Email</h3>
-                                <span class="contact__subtitle">jraj4752@gmail.com</span>
+                                <span class="contact__subtitle">j*******@gmail.com</span>
                             </div>
                         </div>
 
@@ -714,32 +723,40 @@
                         </div>
                     </div>
 
-                    <form id="form" class="contact__form grid">
+                    <form id="myForm" name="form" class="contact__form grid" onsubmit="return formValidation()">
                         <div class="contact__inputs grid">
-                            <div class="contact__content">
-                                <label for="name" class="contact__label">Name</label>
-                                <input type="text" class="contact__input" id="name" name="name" required>
+                            <div>
+                                <div class="contact__content">
+                                    <label for="name" class="contact__label">Name</label>
+                                    <input type="text" class="contact__input" id="name" name="name">
+                                </div>
+                                <span id="name-error" class="error-message"></span>
                             </div>
-                            <div class="contact__content">
-                                <label for="email" class="contact__label">Email</label>
-                                <input type="email" class="contact__input" id="email" name="email" required>
+                            <div>
+                                <div class="contact__content">
+                                    <label for="email" class="contact__label">Email</label>
+                                    <input type="email" class="contact__input" id="email" name="email">
+                                </div>
+                                <span id="email-error" class="error-message"></span>
                             </div>
                         </div>
                         <div class="contact__content">
                             <label for="subject" class="contact__label">Subject</label>
-                            <input type="text" class="contact__input" id="subject" name="subject" required>
+                            <input type="text" class="contact__input" id="subject" name="subject">
                         </div>
+                        <span id="subject-error" class="error-message"></span>
                         <div class="contact__content">
                             <label for="message" class="contact__label">Message</label>
-                            <textarea name="message" id="message" cols="0" rows="7" class="contact__input" id="message" name="message" required></textarea>
+                            <textarea name="message" id="message" cols="0" rows="7" class="contact__input" id="message" name="message"></textarea> 
                         </div>
-
+                        <span id="message-error" class="error-message"></span>
                         <div>
-                            <button type="submit" onclick="sendMail()" class="button button--flex form-submit-button">
+                            <button type="submit" class="button button--flex form-submit-button">
                                 Send Message
                                 <i class="uil uil-message button__icon"></i>
                             </button>
                         </div>
+                        <span id="success-message" class="success-message"></span>
                     </form>
                 </div>
             </section>
@@ -767,7 +784,7 @@
                     </ul>
 
                     <div class="footer__socials">
-                        <a href="www.linkedin.com/in/jaydeepsinh-raj/" target="_blank" class="footer__social">
+                        <a href="https://www.linkedin.com/in/jaydeepsinh-raj/" target="_blank" class="footer__social">
                             <i class="uil uil-linkedin-alt"></i>
                         </a>
                         <a href="https://github.com/jaydeepsinhraj/" target="_blank" class="footer__social">

@@ -103,7 +103,7 @@ let swiper = new Swiper('.portfolio__container', {
     },
     pagination: {
       el: '.swiper-pagination',
-      clickable:true,
+      clickable: true,
     },
     // mousewheel: true,
     // keyboard: true,
@@ -178,6 +178,47 @@ themeButton.addEventListener('click', () => {
 })
 
 
+/*==================== FORM VALIDATION  ====================*/
+function formValidation(){
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    const nameError = document.getElementById("name-error");
+    const emailError = document.getElementById("email-error");
+    const subjectError = document.getElementById("subject-error");
+    const messageError = document.getElementById("message-error");
+
+    nameError.textContent = "";
+    emailError.textContent ="";
+    subjectError.textContent = "";
+    messageError.textContent = "";
+
+    let isValid = true;
+
+    if (name === "") {
+        nameError.textContent = "Please write your full name.";
+        isValid = false;
+    }
+
+    if (email === "" || !email.includes("@")) {
+        emailError.textContent = "Please write a valid email-Id.";
+        isValid = false;
+    }
+
+    if (subject === "") {
+        subjectError.textContent = "Please specify a subject.";
+        isValid = false;
+    }
+
+    if (message === "") {
+        messageError.textContent = "Please write down your message briefly!";
+        isValid = false;
+    }
+
+    return isValid;
+}
 
 /*==================== SEND EMAIL  ====================*/
 function sendMail(){
@@ -191,11 +232,28 @@ function sendMail(){
     emailjs.send('service_fqx8ldb','template_xfato7j',userData)
     .then(function (response){
         console.log("Success!", response.status, response.text);
-        document.getElementById('form').reset();
-        alert("Your message has been sent successfully!");
+        document.getElementById('myForm').reset();
+        // alert("Your message has been sent successfully!");
     }, function (error){
         console.log('FAILED...', error);
     });
 }
+
+/*==================== SEND EMAIL AFTER VALIDATION  ====================*/
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    const successMessage = document.getElementById("success-message");
+    successMessage.textContent = "";
+    console.log("Success...");
+    event.preventDefault(); 
+    if (formValidation() == true){
+        sendMail();
+        console.log("Your message has been sent successfully!");
+        successMessage.textContent = "Your message has been sent successfully!";
+        setTimeout(function(){
+            successMessage.textContent = "";
+        }, 8000);
+        document.getElementById('myForm').reset();
+    }    
+});
 
 // ====================== END OF THIS FILE =====================
