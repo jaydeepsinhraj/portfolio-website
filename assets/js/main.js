@@ -1,5 +1,4 @@
 // JAY MATAJI!
-<<<<<<< HEAD
 
 // Typewriter Effect
 const texts = [
@@ -34,8 +33,6 @@ function eraseText(){
 }
 window.onload = typeWriter
 
-=======
->>>>>>> 786e0cb9a3e8d8d4fcdaf6d534f174c9e8b0d113
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu=document.getElementById('nav-menu'),
       navToggle=document.getElementById('nav-toggle'),
