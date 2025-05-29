@@ -525,11 +525,19 @@ img {
 }
 
 .skills__js{
+<<<<<<< HEAD
   width: 85%;
 }
 
 .skills__react{
   width: 92%;
+=======
+  width: 77%;
+}
+
+.skills__react{
+  width: 80%;
+>>>>>>> 786e0cb9a3e8d8d4fcdaf6d534f174c9e8b0d113
 }
 
 /* --------- Skills 2 --------- */
@@ -576,7 +584,11 @@ img {
 }
 
 .skills__at{
+<<<<<<< HEAD
   width: 95%;
+=======
+  width: 88%;
+>>>>>>> 786e0cb9a3e8d8d4fcdaf6d534f174c9e8b0d113
 }
 
 .skills__ttt{
